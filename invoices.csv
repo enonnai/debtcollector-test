@@ -1,0 +1,10 @@
+Company name,Invoice number,Amount in pence excl vat,VAT Rate
+Schmidt Inc,INV-001,592499005,20
+"Johns, Fahey and Volkman",INV-203,306956894,20
+Hayes-Johnston,INV-901,143730248,20
+Lebsack Inc,INV-003,273696998,20
+"Cormier, Hahn and Halvorson",INV-202,336994626,20
+"Johns, Fahey and Volkman",INV-305,800259322,20
+Adams-Bartell,INV-005,716332707,20
+Padberg-Schinner,INV-785,990837042,20
+Lebsack Inc,INV-765,32780817,0
