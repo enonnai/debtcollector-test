@@ -20,4 +20,13 @@ describe DebtCollector do
     end
   end
 
+  context 'VAT rate is equal to 15' do
+    describe "#display_formatted_output" do
+      it "returns a string containing a company name followed by their debt amount in pounds including VAT" do
+        subject = DebtCollector.new("Company name" => "Lebsack Inc", "Invoice number" => "INV-765", "Amount in pence excl vat" => 273696998, "VAT Rate" => 15)
+        expect(subject.display_formatted_output).to eq "Lebsack Inc: £3,147,515.48 incl. VAT"
+      end
+    end
+  end
+
 end
