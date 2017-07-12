@@ -2,14 +2,12 @@
 
 ## Contents
 * [Context](#Context)
-* [My Approach](#My Approach)
+* [My Approach](#MyApproach)
 * [Installation](#Installation)
-* [RSpec Tests](#RSpec)
+* [RSpec Tests](#RSpecTests)
 * [Usage](#Usage)
 
 ## <a name="Context">Context</a>:
-Context
-============
 
 The finance department uses a legacy system to handle all their invoices. However due to limitations with this product they cannot easily extract reports from it.
 
@@ -39,7 +37,7 @@ Feel free to use anything from the standard library or any external libraries th
 
 What we'd expect to receive is the required source code to feed [this file](invoices.csv) to and get similar output as above.
 
-## <a name="My Approach">My Approach</a>:
+## <a name="MyApproach">My Approach</a>:
 
 From an initial solution which saw the presence of both the CSV file processing logic and a class, DebtCollector, responsible for calculating the amount in pounds including VAT and displaying the desired formatted output, I carried on separating the two by distributing them into two different files. I made this choice in order to separate concerns and to be able to test my DebtCollector class.
 
@@ -60,7 +58,7 @@ $ cd debtcollector-test
 $ bundle
 ```
 
-## <a name="Rspec">RSpec Tests</a>
+## <a name="RSpecTests">RSpec Tests</a>
 ```shell
 $ cd debtcollector-test
 $ rspec
