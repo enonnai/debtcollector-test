@@ -4,11 +4,22 @@ class DebtCollector
     @row = row
   end
 
-  def calculate_amount_in_pounds_incl_VAT
-      ('%.2f' % [@row['Amount in pence excl vat'] / 100.0 * ((@row['VAT Rate']).to_f / 100 + 1 )]).to_s.reverse.gsub(/(\d{3})/,"\\1,").chomp(",").reverse
+  def display_formatted_output
+      return "#{@row['Company name']}: £#{add_comma_separator(add_VAT_to_amount)} incl. VAT"
   end
 
-  def display_formatted_output
-      return "#{@row['Company name']}: £#{calculate_amount_in_pounds_incl_VAT} incl. VAT"
+  private
+
+  def add_comma_separator(amount)
+    amount.to_s.reverse.gsub(/(\d{3})/,"\\1,").chomp(",").reverse
   end
+
+  def convert_amount_to_pounds_with_decimals
+    @row['Amount in pence excl vat'] / 100.0
+  end
+
+  def add_VAT_to_amount
+    '%.2f' % ((convert_amount_to_pounds_with_decimals).to_f * (((@row['VAT Rate']).to_f / 100.0) + 1))
+  end
+
 end
